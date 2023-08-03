@@ -1,0 +1,22 @@
+function insertionSort(arr: int[]): int[] {
+    n := length(arr)  // Get the length of the array
+    
+    for i := 1 to n - 1 do
+        currentElement := arr[i]  // Store the current element
+        
+        j := i - 1  // Initialize a counter for the sorted sequence
+        
+        // Compare and shift elements to make space for the current element
+        while j >= 0 and arr[j] > currentElement do
+            arr[j + 1] := arr[j]  // Shift the element to the right
+            j := j - 1  // Move the counter to the left
+        
+        arr[j + 1] := currentElement  // Insert the current element into the sorted sequence
+    
+    return arr
+}
+
+// Example usage 
+array := [5, 2, 9, 1, 5, 6]
+sortedArray := insertionSort(array)
+print(sortedArray)  // Output: [1, 2, 5, 5, 6, 9]
